@@ -1,10 +1,10 @@
 import React from 'react'
-import Profile from './Components/Profile'
+import NavPill from './Components/NavPill.jsx'
 
 const App = () => {
   return (
     <>
-      <Profile />
+      <NavPill />
     </>
   )
 }
