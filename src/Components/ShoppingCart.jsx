@@ -104,7 +104,7 @@ const ShoppingCart = () => {
           {/* Cart Items */}
           <div className="bg-gray-50 rounded-lg p-4 mb-6">
             {/* Header */}
-            <div className="grid grid-cols-12 gap-4 text-sm font-medium text-gray-600 mb-4 hidden md:grid">
+            <div className="grid-cols-12 gap-4 text-sm font-medium text-gray-600 mb-4 hidden md:grid">
               <div className="col-span-6">PRODUCTS</div>
               <div className="col-span-2 text-center">PRICE</div>
               <div className="col-span-2 text-center">QUANTITY</div>
