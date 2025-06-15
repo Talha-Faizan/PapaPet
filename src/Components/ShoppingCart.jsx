@@ -183,7 +183,7 @@ const ShoppingCart = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 pr-5">
             <button className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-orange-400 text-orange-400 rounded font-medium hover:bg-orange-50 transition-colors">
               <ArrowLeft size={16} />
               RETURN TO SHOP
@@ -198,13 +198,13 @@ const ShoppingCart = () => {
         <div className="lg:col-span-1">
           {/* Coupon Section */}
           <div className="mb-6">
-            <div className="flex gap-2">
+            <div className="flex gap-2 ">
               <input
                 type="text"
                 placeholder="Enter Coupon Code"
                 value={couponCode}
                 onChange={(e) => setCouponCode(e.target.value)}
-                className="flex-1 px-4 py-3 border border-gray-300 rounded text-sm"
+                className="flex-1 px-1 md:px-3 py-3 border border-gray-300 rounded text-sm"
               />
               <button className="px-6 py-3 bg-orange-400 text-white rounded font-medium hover:bg-orange-500 transition-colors">
                 APPLY COUPON
