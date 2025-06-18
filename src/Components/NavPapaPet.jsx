@@ -173,21 +173,14 @@ const NavPapaPet = () => {
         <div
           ref={circle}
           className="w-[20vw] h-[20vw] absolute -top-[210%] left-1/2 -translate-x-1/2 
-             bg-[#FFAD22] rounded-full flex items-center justify-center gap-[2vw]"
-        >
-          <button className="text-2xl text-white font-light px-3 py-1 rounded-full transition-all duration-300 hover:bg-white hover:text-[#0D9899]">
-            <i className="ri-search-line"></i>
-          </button>
-          <button className="text-2xl text-white font-light px-3 py-1 rounded-full transition-all duration-300 hover:bg-white hover:text-[#0D9899]">
-            <i className="ri-menu-2-line"></i>
-          </button>
-        </div>
+             bg-[#FFAD22] rounded-full flex items-center justify-center gap-[2vw] "
+        ></div>
 
         <div
-          className=" mobile absolute -top-[115%] -right-[25%] w-[60vw] h-[60vw] bg-[#FFAD22] rounded-full 
-  flex items-center justify-center gap-6 z-10 pr-20 pt-14"
+          className="mobile absolute -top-[115%] -right-[25%] w-[60vw] h-[60vw] bg-[#FFAD22] rounded-full 
+  flex items-center justify-center gap-6 z-10 pr-20 pt-14 md:hidden"
         >
-          <div className= "flex items-center gap-4 vsmall">
+          <div className="flex items-center gap-4 vsmall md:hidden">
             <button className="text-white text-2xl p-2 hover:bg-white hover:text-[#0D9899] rounded-full transition-all duration-300">
               <i className="ri-search-line"></i>
             </button>
