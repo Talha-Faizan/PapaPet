@@ -10,6 +10,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import Search from "./Search"; // Import your Search component
 
 const NavPapaPet = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -22,6 +23,9 @@ const NavPapaPet = () => {
   const mobileMenuRef = useRef(null);
 
   const [anchorElUser, setAnchorElUser] = useState(null);
+
+  // State to control search modal
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -99,6 +103,9 @@ const NavPapaPet = () => {
 
   return (
     <>
+      {/* Search Modal */}
+      <Search open={searchOpen} onClose={() => setSearchOpen(false)} />
+
       <div
         className={`w-full fixed top-0 left-0 z-40 font-semibold text-black flex items-center px-16 justify-between p-5 flex-col
         transition-transform duration-300 max-md:px-5 ${
@@ -112,12 +119,13 @@ const NavPapaPet = () => {
               <h1 className="text-2xl font-semibold text-[#0D9899]">PaPaPet</h1>
             </div>
           </Link>
-          <div className="flex items-center justify-center gap-7 relative z-20 max-md:hidden">
+          <div className=" text-sm lg:text-lg whitespace-nowrap px-5 flex items-center justify-center gap-7 relative z-20 max-md:hidden">
             <Link to="/">Home</Link>
             <Link to="/">Services</Link>
             <Link to="/">Pet Supplies</Link>
             <Link to="/">Blogs</Link>
             <Link to="/">About Us</Link>
+            {/* Desktop Search Icon */}
           </div>
 
           {user ? (
@@ -158,10 +166,18 @@ const NavPapaPet = () => {
               <h1 className="font-semibold text-black">Hi, {user?.name}</h1>
             </div>
           ) : (
-            <div className="flex">
+            <div className="flex gap-10">
+              <button
+                onClick={() => setSearchOpen(true)}
+                className="text-[#FFAD22] text-2xl p-2 hover:text-orange-400 rounded-full transition-all duration-300"
+                aria-label="Open search"
+                style={{ lineHeight: 0 }}
+              >
+                <i className="ri-search-line"></i>
+              </button>
               <Link
                 to="/papapet/auth"
-                className="max-md:hidden text-lg flex items-center justify-center gap-2"
+                className="max-md:hidden text-sm lg:text-lg flex items-center justify-center gap-2"
               >
                 Sign in
                 <i className="ri-arrow-right-circle-fill text-lg"></i>
@@ -181,7 +197,13 @@ const NavPapaPet = () => {
   flex items-center justify-center gap-6 z-10 pr-20 pt-14 md:hidden"
         >
           <div className="flex items-center gap-4 vsmall md:hidden">
-            <button className="text-white text-2xl p-2 hover:bg-white hover:text-[#0D9899] rounded-full transition-all duration-300">
+            {/* Mobile Search Icon */}
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="text-white text-2xl p-2 hover:bg-white hover:text-[#0D9899] rounded-full transition-all duration-300"
+              aria-label="Open search"
+              style={{ lineHeight: 0 }}
+            >
               <i className="ri-search-line"></i>
             </button>
             <button
